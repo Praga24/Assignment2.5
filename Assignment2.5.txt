@@ -15,32 +15,33 @@ nodes in the same rack is much more desirable than network traffic across the ra
 
 
 
-2.  Components of Hadoop 1.x :
-   NameNode
-• Contains the Hadoop FileSystem Tree and other metadata information about files and
+2.  Components of Hadoop 1.x
+ There are 5 components in Hadoop 1.x :
+   1.NameNode
+â€¢ Contains the Hadoop FileSystem Tree and other metadata information about files and
 directories
-• Contains in-memory mapping of which blocks are stored in which datanode
+â€¢ Contains in-memory mapping of which blocks are stored in which datanode
 
 
-Secondary Namenode
-• Performs house-keeping activities for NameNode, like periodic merging of namespace and
+2.Secondary Namenode
+â€¢ Performs house-keeping activities for NameNode, like periodic merging of namespace and
 edits
-• This is not a back up for NameNode
+â€¢ This is not a back up for NameNode
 
 
-DataNode
-• Stores actual data blocks of file in HDFS on its own local disk
-• Sends signals to NameNode periodically (called as Heartbeat) to verify if it is active
-• Sends block reporting to the NameNode on cluster startup as well as periodically at
+3.DataNode
+â€¢ Stores actual data blocks of file in HDFS on its own local disk
+â€¢ Sends signals to NameNode periodically (called as Heartbeat) to verify if it is active
+â€¢ Sends block reporting to the NameNode on cluster startup as well as periodically at
 every 10th Heartbeat
-• The DataNode are the workhorse of the system
-• They perform all the block operations, including periodic the Checksum. They receive
+â€¢ The DataNode are the workhorse of the system
+â€¢ They perform all the block operations, including periodic the Checksum. They receive
 instructions from the NameNode of where to put the blocks and how to put the blocks.
 
-JobTracker (Not present in Hadoop 2.x)
-• Controls overall execution of map reduce jobs
+4.JobTracker 
+â€¢ Controls overall execution of map reduce jobs
 
 
-TaskTracker (Not present in Hadoop 2.x)
-• Runs individual map-reduce jobs on DataNodes
-• Periodically communicates with the JobTracker to give updates and receive instructions
+5.TaskTracker 
+â€¢ Runs individual map-reduce jobs on DataNodes
+â€¢ Periodically communicates with the JobTracker to give updates and receive instructions
